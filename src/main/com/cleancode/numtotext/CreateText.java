@@ -22,23 +22,24 @@ public class CreateText{
         }
     }
 
+    private int getReminder(int number, int divisorForNthPlace){
+        return number / divisorForNthPlace;
+    }
+
+    private int getModulus (int number, int divisor){
+        return number % divisor;
+    }
+
     private String generateTextIfNUmberIsLessThan20(int number){
         return textArray[number];
     }
 
     private String generateTextIfNUmberIsLessThan100(int number){
-        return tens[getTensDigit(number)] + (getUniqueDigit(number) != 0 ? " " + textArray[getUniqueDigit(number)] : "");
-    }
-
-    private int getTensDigit(int number){
-        return number/value_ten;
-    }
-
-    private  int getUniqueDigit(int number){
-        return number % value_ten;
+        return tens[getReminder(number, 10)] + (getModulus(number, 10) != 0 ? " " + textArray[getModulus(number, 10)] : "");
     }
 
     private String generateTextIfNUmberIsGreaterThan100(int number){
-        return textArray[number/value_hundred] + " " + "hundred" + " " + numberToText(number%value_hundred);
+        return textArray[getReminder(number, 100)] + " " + "hundred" +
+                (getModulus(number, 100) != 0 ? " " + numberToText(getModulus(number, 100)) : "");
     }
 }
