@@ -11,14 +11,17 @@ public class CreateText{
     final int value_ten = 10;
     final int value_twenty = 20;
     final int value_hundred = 100;
+    final int value_thousand = 1000;
 
     public String numberToText(int number){
         if(number <= value_twenty){
             return generateTextIfNUmberIsLessThan20(number);
         } else if(number < value_hundred) {
             return generateTextIfNUmberIsLessThan100(number);
+        } else if(number < value_thousand){
+            return generateTextIfNUmberIsLessThan1000(number);
         } else {
-            return generateTextIfNUmberIsGreaterThan100(number);
+            return generateTextIfNUmberIsGreaterThan1000(number);
         }
     }
 
@@ -38,8 +41,13 @@ public class CreateText{
         return tens[getReminder(number, 10)] + (getModulus(number, 10) != 0 ? " " + textArray[getModulus(number, 10)] : "");
     }
 
-    private String generateTextIfNUmberIsGreaterThan100(int number){
+    private String generateTextIfNUmberIsLessThan1000(int number){
         return textArray[getReminder(number, 100)] + " " + "hundred" +
                 (getModulus(number, 100) != 0 ? " " + numberToText(getModulus(number, 100)) : "");
+    }
+
+    private String generateTextIfNUmberIsGreaterThan1000(int number){
+        return textArray[getReminder(number, 1000)] + " " + "thousand" +
+                (getModulus(number, 1000) != 0 ? " " + numberToText(getModulus(number, 1000)) : "");
     }
 }
