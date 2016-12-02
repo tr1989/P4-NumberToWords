@@ -12,4 +12,10 @@ public class NumberIntoWordsConverterShould {
         NumberIntoWordsConverter n2wConverter = new NumberIntoWordsConverter();
         Assert.assertEquals("zero", n2wConverter.convertNumberToText(0));
     }
+
+    @Test
+    public void convert_1_into_words_as_one() {
+        NumberIntoWordsConverter n2wConverter = new NumberIntoWordsConverter();
+        Assert.assertEquals("one", n2wConverter.convertNumberToText(1));
+    }
 }
