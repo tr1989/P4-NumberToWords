@@ -5,6 +5,8 @@ public class CreateText{
     String[] textArray = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
             "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
 
+    String[] tens = {  "", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+
     final String twenty = "twenty";
     final String ninety = "ninety";
     final int value_ten = 10;
@@ -14,14 +16,9 @@ public class CreateText{
         if(number <= value_twenty){
             return textArray[number];
         } else {
-            String tensDigit;
-            if(number/value_ten == 2){
-                tensDigit = twenty;
-            } else{
-                tensDigit = ninety;
-            }
-            number = number % value_ten;
-            return tensDigit + " " + textArray[number];
+            String tensDigit = tens[number/value_ten];
+            String uniqueDigit = textArray[number % value_ten];
+            return tensDigit + " " + uniqueDigit;
         }
     }
 
