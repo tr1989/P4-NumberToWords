@@ -6,6 +6,6 @@ package com.cleancode.numtotext;
 public class NumberIntoWordsConverter {
 
     public String convertNumberToText(int number){
-        return "zero";
+        return (number == 1) ? "one" : "zero";
     }
 }
