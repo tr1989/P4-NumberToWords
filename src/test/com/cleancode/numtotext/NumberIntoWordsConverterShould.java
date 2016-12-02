@@ -54,4 +54,10 @@ public class NumberIntoWordsConverterShould {
         NumberIntoWordsConverter n2wConverter = new NumberIntoWordsConverter();
         Assert.assertEquals("one hundred thirty", n2wConverter.convertNumberToText(130));
     }
+
+    @Test
+    public void convert_1230_into_words_as_one_thousand_two_hundred_thirty() {
+        NumberIntoWordsConverter n2wConverter = new NumberIntoWordsConverter();
+        Assert.assertEquals("one thousand two hundred thirty", n2wConverter.convertNumberToText(1230));
+    }
 }
