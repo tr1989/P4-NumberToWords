@@ -27,15 +27,15 @@ public class CreateText{
     }
 
     private String generateTextIfNUmberIsLessThan100(int number){
-        return getTensDigitText(number) + " " + getUniqueDigitText(number);
+        return tens[getTensDigit(number)] + (getUniqueDigit(number) != 0 ? " " + textArray[getUniqueDigit(number)] : "");
     }
 
-    private String getTensDigitText(int number){
-        return tens[number/value_ten];
+    private int getTensDigit(int number){
+        return number/value_ten;
     }
 
-    private  String getUniqueDigitText(int number){
-        return textArray[number % value_ten];
+    private  int getUniqueDigit(int number){
+        return number % value_ten;
     }
 
     private String generateTextIfNUmberIsGreaterThan100(int number){
