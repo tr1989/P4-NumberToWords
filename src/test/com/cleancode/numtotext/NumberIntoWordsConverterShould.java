@@ -38,8 +38,8 @@ public class NumberIntoWordsConverterShould {
     }
 
     @Test
-    public void convert_95_into_words_as_ninty_five() {
+    public void convert_95_into_words_as_ninety_five() {
         NumberIntoWordsConverter n2wConverter = new NumberIntoWordsConverter();
-        Assert.assertEquals("ninty five", n2wConverter.convertNumberToText(95));
+        Assert.assertEquals("ninety five", n2wConverter.convertNumberToText(95));
     }
 }
