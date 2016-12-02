@@ -9,6 +9,11 @@ public class NumberIntoWordsConverter {
             "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"};
 
     public String convertNumberToText(int number){
-        return textArray[number];
+        if(number <=20){
+            return textArray[number];
+        } else {
+            return "twenty one";
+        }
+
     }
 }
