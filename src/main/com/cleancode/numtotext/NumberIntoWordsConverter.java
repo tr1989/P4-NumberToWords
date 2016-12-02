@@ -5,7 +5,9 @@ package com.cleancode.numtotext;
  */
 public class NumberIntoWordsConverter {
 
+    String[] textArray = {"zero", "one"};
+
     public String convertNumberToText(int number){
-        return (number == 1) ? "one" : "zero";
+        return textArray[number];
     }
 }
