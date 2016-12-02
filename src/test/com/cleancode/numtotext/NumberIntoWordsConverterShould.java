@@ -48,4 +48,10 @@ public class NumberIntoWordsConverterShould {
         NumberIntoWordsConverter n2wConverter = new NumberIntoWordsConverter();
         Assert.assertEquals("one hundred five", n2wConverter.convertNumberToText(105));
     }
+
+    @Test
+    public void convert_130_into_words_as_one_hundred_thirty() {
+        NumberIntoWordsConverter n2wConverter = new NumberIntoWordsConverter();
+        Assert.assertEquals("one hundred thirty", n2wConverter.convertNumberToText(130));
+    }
 }
