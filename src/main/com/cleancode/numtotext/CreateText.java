@@ -8,18 +8,30 @@ public class CreateText{
     String[] tens = {  "", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
     final String twenty = "twenty";
-    final String ninety = "ninety";
     final int value_ten = 10;
     final int value_twenty = 20;
 
     public String numberToText(int number){
         if(number <= value_twenty){
-            return textArray[number];
+            return generateTextIfNUmberIsLessThan20(number);
         } else {
-            String tensDigit = tens[number/value_ten];
-            String uniqueDigit = textArray[number % value_ten];
-            return tensDigit + " " + uniqueDigit;
+            return generateTextIfNUmberIsGreaterThan20(number);
         }
     }
 
+    private String generateTextIfNUmberIsLessThan20(int number){
+        return textArray[number];
+    }
+
+    private String generateTextIfNUmberIsGreaterThan20(int number){
+        return getTensDigitText(number) + " " + getUniqueDigitText(number);
+    }
+
+    private String getTensDigitText(int number){
+        return tens[number/value_ten];
+    }
+
+    private  String getUniqueDigitText(int number){
+        return textArray[number % value_ten];
+    }
 }
