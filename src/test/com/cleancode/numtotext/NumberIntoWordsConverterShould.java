@@ -18,4 +18,10 @@ public class NumberIntoWordsConverterShould {
         NumberIntoWordsConverter n2wConverter = new NumberIntoWordsConverter();
         Assert.assertEquals("one", n2wConverter.convertNumberToText(1));
     }
+
+    @Test
+    public void convert_20_into_words_as_twenty() {
+        NumberIntoWordsConverter n2wConverter = new NumberIntoWordsConverter();
+        Assert.assertEquals("twenty", n2wConverter.convertNumberToText(20));
+    }
 }
